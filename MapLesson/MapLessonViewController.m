@@ -179,8 +179,10 @@
     NSDictionary *pointDict = self.arrayPoints[indexPath.row];
     MKPointAnnotation *annotation = pointDict[ANNOTATION_KEY];
     
-    [self.mapView setRegion:MKCoordinateRegionMakeWithDistance(annotation.coordinate, DEFAULT_MAP_SCALE, DEFAULT_MAP_SCALE) animated:YES];
+    MKCoordinateRegion region = MKCoordinateRegionMakeWithDistance(annotation.coordinate, DEFAULT_MAP_SCALE, DEFAULT_MAP_SCALE);
+    [self.mapView setRegion:region animated:YES];
     [self.mapView selectAnnotation:annotation animated:YES];
+    [tableView deselectRowAtIndexPath:indexPath animated:YES];
 }
 
 
