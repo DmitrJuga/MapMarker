@@ -115,11 +115,12 @@
         [self.mapView addAnnotation:annotation];
         // вычисляем область, в которую попадают все аннотации
         MKMapPoint annotationPoint = MKMapPointForCoordinate(annotation.coordinate);
-        MKMapRect pointRect = MKMapRectMake(annotationPoint.x, annotationPoint.y, 1, 1);
+        MKMapRect pointRect = MKMapRectMake(annotationPoint.x, annotationPoint.y, 0.1, 0.1);
         zoomRect = MKMapRectUnion(zoomRect, pointRect);
     }
     // зум для отображения ВСЕХ добавленных аннотаций
-    [self.mapView setVisibleMapRect:zoomRect animated:YES];
+    double inset = -zoomRect.size.width * 0.1;
+    [self.mapView setVisibleMapRect:MKMapRectInset(zoomRect, inset, inset) animated:YES];
 }
 
 // обработка нажатия на маркер (выбор аннотации)
