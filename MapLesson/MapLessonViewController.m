@@ -10,9 +10,7 @@
 #import "PointTableViewCell.h"
 #import "AppConstants.h"
 
-@interface MapLessonViewController () {
-    BOOL isLocationUpdated;
-}
+@interface MapLessonViewController ()
 
 @property (nonatomic, strong) CLLocationManager *locationManager;
 @property (weak, nonatomic) IBOutlet MKMapView *mapView;
@@ -47,6 +45,7 @@
 // включаем обновление геолокации, если пользователь разрешил
 - (void)locationManager:(CLLocationManager *)manager didChangeAuthorizationStatus:(CLAuthorizationStatus)status {
     if (status == kCLAuthorizationStatusAuthorizedWhenInUse) {
+        self.mapView.showsUserLocation = YES;
         [self.locationManager startUpdatingLocation];
     }
 }
@@ -54,17 +53,17 @@
 // обновление геолокации
 - (void)locationManager:(CLLocationManager *)manager
      didUpdateLocations:(NSArray *)locations {
-    if (!isLocationUpdated) {
+        // фокус на текущцю локацию
         CLLocation *location = locations.lastObject;
         [self.mapView setRegion:MKCoordinateRegionMakeWithDistance(location.coordinate, DEFAULT_MAP_SCALE, DEFAULT_MAP_SCALE) animated:YES];
-        isLocationUpdated = YES;
-    }
+        // приостанавливаем обновление геолокации
+        [self.locationManager stopUpdatingLocation];
 }
 
 
 #pragma mark - MKMapViewDelegate
 
-// создание view для кастомной аннотации
+// создание кастомного view для аннотации
 - (MKAnnotationView *)mapView:(MKMapView *)mapView viewForAnnotation:(id <MKAnnotation>)annotation {
     
     if (![annotation isKindOfClass:MKUserLocation.class]) {
@@ -78,7 +77,7 @@
     return nil;
 }
 
-// создание CalloutView для кастомной аннотации
+// создание кастомного CalloutView для аннотации
 - (UIView *)getCalloutView:(NSString*)title {
     
     // view
@@ -260,10 +259,15 @@
 
 // обработчик нажатия кнопки "Очистить"
 - (IBAction)btnClearPressed:(id)sender {
+    
     [self.mapView removeAnnotations:self.mapView.annotations];
     [self.arrayPoints removeAllObjects];
     [self tableViewReload];
-    isLocationUpdated = NO; //форсируем возвращение в UserLoaction
+    
+    // запускаем обновление текущего положения
+    if (CLLocationManager.authorizationStatus == kCLAuthorizationStatusAuthorizedWhenInUse) {
+        [self.locationManager startUpdatingLocation];
+    }
 }
 
 @end
