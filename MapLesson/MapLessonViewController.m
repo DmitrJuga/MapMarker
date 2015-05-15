@@ -126,6 +126,13 @@
 // обработка нажатия на маркер (выбор аннотации)
 - (void)mapView:(MKMapView *)mapView didSelectAnnotationView:(MKAnnotationView *)view {
     if (![view.annotation isKindOfClass:MKUserLocation.class]) {
+        // фокус на аннотацию (если не по центру - ставим по центру)
+        MKPointAnnotation *annotation = view.annotation;
+        if (annotation.coordinate.latitude != mapView.region.center.latitude ||
+            annotation.coordinate.longitude != mapView.region.center.longitude) {
+            MKCoordinateRegion region = MKCoordinateRegionMake(annotation.coordinate, mapView.region.span);
+            [mapView setRegion:region animated:YES];
+        }
         // анимировнное появление calloutView
         UIView *calloutView = view.subviews.firstObject;
         [UIView animateWithDuration:0.4 animations:^{
@@ -178,11 +185,13 @@
 // выбор строки в таблице - показываем выбранную точку (аннотацию) на карте
 -(void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
     NSDictionary *pointDict = self.arrayPoints[indexPath.row];
+    
     MKPointAnnotation *annotation = pointDict[ANNOTATION_KEY];
+    [self.mapView selectAnnotation:annotation animated:YES];
     
     MKCoordinateRegion region = MKCoordinateRegionMakeWithDistance(annotation.coordinate, DEFAULT_MAP_SCALE, DEFAULT_MAP_SCALE);
     [self.mapView setRegion:region animated:YES];
-    [self.mapView selectAnnotation:annotation animated:YES];
+    
     [tableView deselectRowAtIndexPath:indexPath animated:YES];
 }
 
