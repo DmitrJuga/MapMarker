@@ -249,7 +249,7 @@
 // обработчик нажатия кнопки "Обновить"
 - (IBAction)btnRefreshPressed:(id)sender {
     if (self.arrayPoints.count == 0) {
-        UIAlertView *alert = [[UIAlertView alloc]initWithTitle:@"Нет точек" message:@"Сначала добавьте точки c длинным нажатием на карту" delegate:nil cancelButtonTitle:@"OK" otherButtonTitles:nil];
+        UIAlertView *alert = [[UIAlertView alloc]initWithTitle:@"Нет точек" message:@"Сначала добавьте точки долгим нажатием на карту" delegate:nil cancelButtonTitle:@"OK" otherButtonTitles:nil];
         [alert show];
     } else {
         [self annotationsReload];
