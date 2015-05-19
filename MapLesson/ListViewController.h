@@ -7,8 +7,6 @@
 //
 
 #import <UIKit/UIKit.h>
-#import "MapKit/MapKit.h"
-#import "CoreLocation/CoreLocation.h"
 
 @interface ListViewController : UIViewController <UITableViewDataSource, UITableViewDelegate>
 

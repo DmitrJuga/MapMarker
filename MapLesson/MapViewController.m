@@ -17,6 +17,7 @@ typedef NSDictionary * (^PointArrayElementBlock)(NSString *street, NSString *cit
 
 @property (weak, nonatomic) IBOutlet UIView *customNavBar;
 @property (nonatomic, strong) CLLocationManager *locationManager;
+@property (weak, nonatomic) IBOutlet MKMapView *mapView;
 @property (nonatomic, strong) NSMutableArray *arrayPoints;
 
 @end

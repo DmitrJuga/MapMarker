@@ -6,8 +6,8 @@
 //  Copyright (c) 2015 Dmitriy Dolotenko. All rights reserved.
 //
 
-#import "PointTableViewCell.h"
 #import "AppConstants.h"
+#import "PointTableViewCell.h"
 
 @interface PointTableViewCell()
 

@@ -10,6 +10,7 @@
 
 @implementation DDUModel
 
+// метод класса, возвращающий синглтон
 + (DDUModel *)sharedModel {
 
     static DDUModel *singleton = nil;
@@ -22,6 +23,7 @@
     return singleton;
 }
 
+// инициализатор класса (создаём необходимые объекты)
 - (instancetype)init {
     
     self = [super init];

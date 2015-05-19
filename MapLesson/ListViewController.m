@@ -10,7 +10,6 @@
 #import "ListViewController.h"
 #import "PointTableViewCell.h"
 #import "DDUModel.h"
-#import "MapViewController.h"
 
 
 @interface ListViewController ()
