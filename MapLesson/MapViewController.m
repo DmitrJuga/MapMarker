@@ -119,6 +119,7 @@ typedef NSDictionary * (^PointArrayElementBlock)(NSString *street, NSString *cit
     }];
 }
 
+
 #pragma mark - MapView routines
 
 // создание кастомного CalloutView для аннотации
@@ -211,7 +212,6 @@ typedef NSDictionary * (^PointArrayElementBlock)(NSString *street, NSString *cit
         }];
     }
 }
-
 
 // добавление точки в массив (с блоком для формирования элемента массива)
 - (void)addToArrayPointFromLocation:(CLLocation *)location withData:(PointArrayElementBlock)getArrayElementBlock {
