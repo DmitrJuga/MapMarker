@@ -11,7 +11,7 @@
 #import "DDUModel.h"
 
 
-typedef NSDictionary * (^PointArrayElementBlock)(NSString *street, NSString *city, NSString *zipCode);
+typedef NSDictionary * (^PointArrayElementBlock)(NSString *street, NSString *city, NSString *zipCode, CLLocationCoordinate2D coordinate);
 
 @interface MapViewController ()
 
@@ -193,12 +193,13 @@ typedef NSDictionary * (^PointArrayElementBlock)(NSString *street, NSString *cit
         CLLocation *touchLocation = [[CLLocation alloc] initWithLatitude:touchCoordinate.latitude longitude:touchCoordinate.longitude];
         
         // посылаем данные в массив (передавая блок с кодом формирования элемента массива)
-        [self addToArrayPointFromLocation:touchLocation withData:^(NSString *street, NSString *city, NSString *zipCode) {
+        [self addToArrayPointFromLocation:touchLocation
+                                 withData:^(NSString *street, NSString *city, NSString *zipCode, CLLocationCoordinate2D coordinate) {
             
             // создаём аннотацию
             MKPointAnnotation * annotation = [[MKPointAnnotation alloc]init];
             annotation.title = [NSString stringWithFormat:@"%@\n%@, %@", street, zipCode, city];
-            annotation.coordinate = touchLocation.coordinate;
+            annotation.coordinate = coordinate;
             
             // создаём словарь - элемент массива
             NSDictionary *dict = [[NSDictionary alloc]initWithObjectsAndKeys:
@@ -230,7 +231,7 @@ typedef NSDictionary * (^PointArrayElementBlock)(NSString *street, NSString *cit
             zipCode = (zipCode) ? zipCode : @"xxxxxx";
             
             // добавляем в массив (вызывая блок для формирования элемента массива)
-            [self.arrayPoints addObject:getArrayElementBlock(street, city, zipCode)];
+            [self.arrayPoints addObject:getArrayElementBlock(street, city, zipCode, location.coordinate)];
             
             // сообщение пользователю
             UIAlertView *alert = [[UIAlertView alloc]initWithTitle:@"Точка добавлена"
