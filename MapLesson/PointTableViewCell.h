@@ -10,7 +10,6 @@
 
 @interface PointTableViewCell : UITableViewCell
 
-@property (weak, nonatomic) IBOutlet UILabel *streetLabel;
-@property (weak, nonatomic) IBOutlet UILabel *cityLabel;
+- (void)setWithDict:(NSDictionary *)dict;
 
 @end

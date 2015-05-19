@@ -9,7 +9,6 @@
 /* Begin PBXBuildFile section */
 		1D0DAE131B026D2F007E0A83 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 1D0DAE121B026D2F007E0A83 /* main.m */; };
 		1D0DAE161B026D2F007E0A83 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 1D0DAE151B026D2F007E0A83 /* AppDelegate.m */; };
-		1D0DAE191B026D2F007E0A83 /* MapLessonViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 1D0DAE181B026D2F007E0A83 /* MapLessonViewController.m */; };
 		1D0DAE1C1B026D2F007E0A83 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 1D0DAE1A1B026D2F007E0A83 /* Main.storyboard */; };
 		1D0DAE1E1B026D2F007E0A83 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 1D0DAE1D1B026D2F007E0A83 /* Images.xcassets */; };
 		1D0DAE211B026D2F007E0A83 /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 1D0DAE1F1B026D2F007E0A83 /* LaunchScreen.xib */; };
@@ -17,6 +16,9 @@
 		1D0DAE371B026ED1007E0A83 /* MapKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1D0DAE361B026ED1007E0A83 /* MapKit.framework */; };
 		1D0DAE391B026EDB007E0A83 /* CoreLocation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1D0DAE381B026EDB007E0A83 /* CoreLocation.framework */; };
 		1D1686DC1B05B6ED0017A78A /* PointTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 1D1686DB1B05B6ED0017A78A /* PointTableViewCell.m */; };
+		1D1686E51B07E68D0017A78A /* DDUModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 1D1686E41B07E68D0017A78A /* DDUModel.m */; };
+		1D1686E91B08046A0017A78A /* ListViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 1D1686E81B08046A0017A78A /* ListViewController.m */; };
+		1D1686EC1B0826A40017A78A /* MapViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 1D1686EB1B0826A40017A78A /* MapViewController.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -35,8 +37,7 @@
 		1D0DAE121B026D2F007E0A83 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		1D0DAE141B026D2F007E0A83 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		1D0DAE151B026D2F007E0A83 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
-		1D0DAE171B026D2F007E0A83 /* MapLessonViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MapLessonViewController.h; sourceTree = "<group>"; };
-		1D0DAE181B026D2F007E0A83 /* MapLessonViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MapLessonViewController.m; sourceTree = "<group>"; };
+		1D0DAE171B026D2F007E0A83 /* MapViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MapViewController.h; sourceTree = "<group>"; };
 		1D0DAE1B1B026D2F007E0A83 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		1D0DAE1D1B026D2F007E0A83 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
 		1D0DAE201B026D2F007E0A83 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/LaunchScreen.xib; sourceTree = "<group>"; };
@@ -48,6 +49,11 @@
 		1D1686DA1B05B6ED0017A78A /* PointTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PointTableViewCell.h; sourceTree = "<group>"; };
 		1D1686DB1B05B6ED0017A78A /* PointTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PointTableViewCell.m; sourceTree = "<group>"; };
 		1D1686DD1B05E4050017A78A /* AppConstants.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppConstants.h; sourceTree = "<group>"; };
+		1D1686E31B07E68D0017A78A /* DDUModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DDUModel.h; sourceTree = "<group>"; };
+		1D1686E41B07E68D0017A78A /* DDUModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DDUModel.m; sourceTree = "<group>"; };
+		1D1686E71B08046A0017A78A /* ListViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ListViewController.h; sourceTree = "<group>"; };
+		1D1686E81B08046A0017A78A /* ListViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ListViewController.m; sourceTree = "<group>"; };
+		1D1686EB1B0826A40017A78A /* MapViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MapViewController.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -96,7 +102,9 @@
 				1D1686DD1B05E4050017A78A /* AppConstants.h */,
 				1D0DAE141B026D2F007E0A83 /* AppDelegate.h */,
 				1D0DAE151B026D2F007E0A83 /* AppDelegate.m */,
-				1D1686DE1B05E48E0017A78A /* MapLessonViewController */,
+				1D1686E61B07E6920017A78A /* Model */,
+				1D1686DE1B05E48E0017A78A /* MapViewController */,
+				1D1686EA1B0804760017A78A /* ListViewController */,
 				1D1686DF1B05E4A40017A78A /* PointTableViewCell */,
 				1D0DAE1A1B026D2F007E0A83 /* Main.storyboard */,
 				1D0DAE1D1B026D2F007E0A83 /* Images.xcassets */,
@@ -132,13 +140,13 @@
 			name = "Supporting Files";
 			sourceTree = "<group>";
 		};
-		1D1686DE1B05E48E0017A78A /* MapLessonViewController */ = {
+		1D1686DE1B05E48E0017A78A /* MapViewController */ = {
 			isa = PBXGroup;
 			children = (
-				1D0DAE171B026D2F007E0A83 /* MapLessonViewController.h */,
-				1D0DAE181B026D2F007E0A83 /* MapLessonViewController.m */,
+				1D0DAE171B026D2F007E0A83 /* MapViewController.h */,
+				1D1686EB1B0826A40017A78A /* MapViewController.m */,
 			);
-			name = MapLessonViewController;
+			name = MapViewController;
 			sourceTree = "<group>";
 		};
 		1D1686DF1B05E4A40017A78A /* PointTableViewCell */ = {
@@ -148,6 +156,24 @@
 				1D1686DB1B05B6ED0017A78A /* PointTableViewCell.m */,
 			);
 			name = PointTableViewCell;
+			sourceTree = "<group>";
+		};
+		1D1686E61B07E6920017A78A /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				1D1686E31B07E68D0017A78A /* DDUModel.h */,
+				1D1686E41B07E68D0017A78A /* DDUModel.m */,
+			);
+			name = Model;
+			sourceTree = "<group>";
+		};
+		1D1686EA1B0804760017A78A /* ListViewController */ = {
+			isa = PBXGroup;
+			children = (
+				1D1686E71B08046A0017A78A /* ListViewController.h */,
+				1D1686E81B08046A0017A78A /* ListViewController.m */,
+			);
+			name = ListViewController;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -251,8 +277,10 @@
 			buildActionMask = 2147483647;
 			files = (
 				1D1686DC1B05B6ED0017A78A /* PointTableViewCell.m in Sources */,
-				1D0DAE191B026D2F007E0A83 /* MapLessonViewController.m in Sources */,
+				1D1686E91B08046A0017A78A /* ListViewController.m in Sources */,
 				1D0DAE161B026D2F007E0A83 /* AppDelegate.m in Sources */,
+				1D1686EC1B0826A40017A78A /* MapViewController.m in Sources */,
+				1D1686E51B07E68D0017A78A /* DDUModel.m in Sources */,
 				1D0DAE131B026D2F007E0A83 /* main.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

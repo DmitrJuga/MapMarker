@@ -18,4 +18,7 @@
 #define     POINT_CELL_ID       @"PointCell"
 
 // Масштаб карты на экране по-умолчанию (в метрах)
-#define     DEFAULT_MAP_SCALE   700
+#define     DEF_MAP_SCALE   700
+
+// Нотификации
+#define     SELECT_NOTIF        @"SelectAnnotationNotification"
