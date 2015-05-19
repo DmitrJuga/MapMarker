@@ -10,8 +10,7 @@
 #import "MapKit/MapKit.h"
 #import "CoreLocation/CoreLocation.h"
 
-@interface MapLessonViewController : UIViewController <MKMapViewDelegate, CLLocationManagerDelegate, UITableViewDataSource, UITableViewDelegate>
-
+@interface MapViewController : UIViewController <MKMapViewDelegate, CLLocationManagerDelegate>
 
 @end
 
