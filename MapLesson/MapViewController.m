@@ -101,7 +101,7 @@ typedef NSDictionary * (^PointArrayElementBlock)(NSString *street, NSString *cit
         // анимировнное появление calloutView
         UIView *calloutView = view.subviews.firstObject;
         [UIView animateWithDuration:0.4 animations:^{
-            calloutView.alpha = 1;
+            calloutView.alpha = .85;
             calloutView.transform = CGAffineTransformIdentity;
         }];
         
