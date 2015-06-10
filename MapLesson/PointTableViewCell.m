@@ -6,13 +6,12 @@
 //  Copyright (c) 2015 Dmitriy Dolotenko. All rights reserved.
 //
 
-#import "AppConstants.h"
 #import "PointTableViewCell.h"
 
 @interface PointTableViewCell()
 
-@property (weak, nonatomic) IBOutlet UILabel *streetLabel;
-@property (weak, nonatomic) IBOutlet UILabel *cityLabel;
+@property (weak, nonatomic) IBOutlet UILabel *nameLabel;
+@property (weak, nonatomic) IBOutlet UILabel *addressLabel;
 
 @end
 
@@ -20,9 +19,9 @@
 @implementation PointTableViewCell
 
 // заполнение ячейки
-- (void)setWithDict:(NSDictionary *)dict {
-    self.streetLabel.text = dict[STREET_KEY];
-    self.cityLabel.text = [NSString stringWithFormat:@"%@, %@", dict[ZIP_KEY], dict[CITY_KEY]];
+- (void)setupWithPoint:(DDPoint *)point {
+    self.nameLabel.text = point.name;
+    self.addressLabel.text = point.address;
 }
 
 @end

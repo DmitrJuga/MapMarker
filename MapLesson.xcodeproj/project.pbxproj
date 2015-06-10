@@ -7,18 +7,21 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		1D04480C1B2682FE00B529BF /* DDPoint+MKAnnotation.m in Sources */ = {isa = PBXBuildFile; fileRef = 1D04480B1B2682FE00B529BF /* DDPoint+MKAnnotation.m */; };
 		1D0DAE131B026D2F007E0A83 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 1D0DAE121B026D2F007E0A83 /* main.m */; };
 		1D0DAE161B026D2F007E0A83 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 1D0DAE151B026D2F007E0A83 /* AppDelegate.m */; };
 		1D0DAE1C1B026D2F007E0A83 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 1D0DAE1A1B026D2F007E0A83 /* Main.storyboard */; };
 		1D0DAE1E1B026D2F007E0A83 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 1D0DAE1D1B026D2F007E0A83 /* Images.xcassets */; };
 		1D0DAE211B026D2F007E0A83 /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 1D0DAE1F1B026D2F007E0A83 /* LaunchScreen.xib */; };
 		1D0DAE2D1B026D2F007E0A83 /* MapLessonTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 1D0DAE2C1B026D2F007E0A83 /* MapLessonTests.m */; };
-		1D0DAE371B026ED1007E0A83 /* MapKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1D0DAE361B026ED1007E0A83 /* MapKit.framework */; };
-		1D0DAE391B026EDB007E0A83 /* CoreLocation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1D0DAE381B026EDB007E0A83 /* CoreLocation.framework */; };
 		1D1686DC1B05B6ED0017A78A /* PointTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 1D1686DB1B05B6ED0017A78A /* PointTableViewCell.m */; };
-		1D1686E51B07E68D0017A78A /* DDUModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 1D1686E41B07E68D0017A78A /* DDUModel.m */; };
+		1D1686E51B07E68D0017A78A /* DDPointList.m in Sources */ = {isa = PBXBuildFile; fileRef = 1D1686E41B07E68D0017A78A /* DDPointList.m */; };
 		1D1686E91B08046A0017A78A /* ListViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 1D1686E81B08046A0017A78A /* ListViewController.m */; };
 		1D1686EC1B0826A40017A78A /* MapViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 1D1686EB1B0826A40017A78A /* MapViewController.m */; };
+		1D24707A1B28A580007B336A /* DDCalloutView.m in Sources */ = {isa = PBXBuildFile; fileRef = 1D2470791B28A580007B336A /* DDCalloutView.m */; };
+		1DFC99831B225B7B0049DE08 /* CoreDataHelper.m in Sources */ = {isa = PBXBuildFile; fileRef = 1DFC99821B225B7B0049DE08 /* CoreDataHelper.m */; };
+		1DFC99871B225BBA0049DE08 /* Model.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 1DFC99851B225BBA0049DE08 /* Model.xcdatamodeld */; };
+		1DFC99961B22630C0049DE08 /* DDPoint.m in Sources */ = {isa = PBXBuildFile; fileRef = 1DFC99951B22630C0049DE08 /* DDPoint.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -32,6 +35,8 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		1D04480A1B2682FE00B529BF /* DDPoint+MKAnnotation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "DDPoint+MKAnnotation.h"; sourceTree = "<group>"; };
+		1D04480B1B2682FE00B529BF /* DDPoint+MKAnnotation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "DDPoint+MKAnnotation.m"; sourceTree = "<group>"; };
 		1D0DAE0D1B026D2F007E0A83 /* MapLesson.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MapLesson.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		1D0DAE111B026D2F007E0A83 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		1D0DAE121B026D2F007E0A83 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
@@ -44,16 +49,21 @@
 		1D0DAE261B026D2F007E0A83 /* MapLessonTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = MapLessonTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		1D0DAE2B1B026D2F007E0A83 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		1D0DAE2C1B026D2F007E0A83 /* MapLessonTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MapLessonTests.m; sourceTree = "<group>"; };
-		1D0DAE361B026ED1007E0A83 /* MapKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MapKit.framework; path = System/Library/Frameworks/MapKit.framework; sourceTree = SDKROOT; };
-		1D0DAE381B026EDB007E0A83 /* CoreLocation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreLocation.framework; path = System/Library/Frameworks/CoreLocation.framework; sourceTree = SDKROOT; };
 		1D1686DA1B05B6ED0017A78A /* PointTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PointTableViewCell.h; sourceTree = "<group>"; };
 		1D1686DB1B05B6ED0017A78A /* PointTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PointTableViewCell.m; sourceTree = "<group>"; };
 		1D1686DD1B05E4050017A78A /* AppConstants.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppConstants.h; sourceTree = "<group>"; };
-		1D1686E31B07E68D0017A78A /* DDUModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DDUModel.h; sourceTree = "<group>"; };
-		1D1686E41B07E68D0017A78A /* DDUModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DDUModel.m; sourceTree = "<group>"; };
+		1D1686E31B07E68D0017A78A /* DDPointList.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DDPointList.h; sourceTree = "<group>"; };
+		1D1686E41B07E68D0017A78A /* DDPointList.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DDPointList.m; sourceTree = "<group>"; };
 		1D1686E71B08046A0017A78A /* ListViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ListViewController.h; sourceTree = "<group>"; };
 		1D1686E81B08046A0017A78A /* ListViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ListViewController.m; sourceTree = "<group>"; };
 		1D1686EB1B0826A40017A78A /* MapViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MapViewController.m; sourceTree = "<group>"; };
+		1D2470781B28A580007B336A /* DDCalloutView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DDCalloutView.h; sourceTree = "<group>"; };
+		1D2470791B28A580007B336A /* DDCalloutView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DDCalloutView.m; sourceTree = "<group>"; };
+		1DFC99811B225B7B0049DE08 /* CoreDataHelper.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CoreDataHelper.h; sourceTree = "<group>"; };
+		1DFC99821B225B7B0049DE08 /* CoreDataHelper.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CoreDataHelper.m; sourceTree = "<group>"; };
+		1DFC99861B225BBA0049DE08 /* Model.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = Model.xcdatamodel; sourceTree = "<group>"; };
+		1DFC99941B22630C0049DE08 /* DDPoint.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DDPoint.h; sourceTree = "<group>"; };
+		1DFC99951B22630C0049DE08 /* DDPoint.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DDPoint.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -61,8 +71,6 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				1D0DAE391B026EDB007E0A83 /* CoreLocation.framework in Frameworks */,
-				1D0DAE371B026ED1007E0A83 /* MapKit.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -79,8 +87,6 @@
 		1D0DAE041B026D2F007E0A83 = {
 			isa = PBXGroup;
 			children = (
-				1D0DAE381B026EDB007E0A83 /* CoreLocation.framework */,
-				1D0DAE361B026ED1007E0A83 /* MapKit.framework */,
 				1D0DAE0F1B026D2F007E0A83 /* MapLesson */,
 				1D0DAE291B026D2F007E0A83 /* MapLessonTests */,
 				1D0DAE0E1B026D2F007E0A83 /* Products */,
@@ -102,12 +108,13 @@
 				1D1686DD1B05E4050017A78A /* AppConstants.h */,
 				1D0DAE141B026D2F007E0A83 /* AppDelegate.h */,
 				1D0DAE151B026D2F007E0A83 /* AppDelegate.m */,
+				1DFC99841B225B7F0049DE08 /* CoreDataHelper */,
 				1D1686E61B07E6920017A78A /* Model */,
 				1D1686DE1B05E48E0017A78A /* MapViewController */,
 				1D1686EA1B0804760017A78A /* ListViewController */,
-				1D1686DF1B05E4A40017A78A /* PointTableViewCell */,
 				1D0DAE1A1B026D2F007E0A83 /* Main.storyboard */,
 				1D0DAE1D1B026D2F007E0A83 /* Images.xcassets */,
+				1DFC99851B225BBA0049DE08 /* Model.xcdatamodeld */,
 				1D0DAE101B026D2F007E0A83 /* Supporting Files */,
 			);
 			path = MapLesson;
@@ -143,26 +150,32 @@
 		1D1686DE1B05E48E0017A78A /* MapViewController */ = {
 			isa = PBXGroup;
 			children = (
+				1D2470781B28A580007B336A /* DDCalloutView.h */,
+				1D2470791B28A580007B336A /* DDCalloutView.m */,
 				1D0DAE171B026D2F007E0A83 /* MapViewController.h */,
 				1D1686EB1B0826A40017A78A /* MapViewController.m */,
 			);
 			name = MapViewController;
 			sourceTree = "<group>";
 		};
-		1D1686DF1B05E4A40017A78A /* PointTableViewCell */ = {
+		1D1686DF1B05E4A40017A78A /* CustomCell */ = {
 			isa = PBXGroup;
 			children = (
 				1D1686DA1B05B6ED0017A78A /* PointTableViewCell.h */,
 				1D1686DB1B05B6ED0017A78A /* PointTableViewCell.m */,
 			);
-			name = PointTableViewCell;
+			name = CustomCell;
 			sourceTree = "<group>";
 		};
 		1D1686E61B07E6920017A78A /* Model */ = {
 			isa = PBXGroup;
 			children = (
-				1D1686E31B07E68D0017A78A /* DDUModel.h */,
-				1D1686E41B07E68D0017A78A /* DDUModel.m */,
+				1DFC99941B22630C0049DE08 /* DDPoint.h */,
+				1DFC99951B22630C0049DE08 /* DDPoint.m */,
+				1D1686E31B07E68D0017A78A /* DDPointList.h */,
+				1D1686E41B07E68D0017A78A /* DDPointList.m */,
+				1D04480A1B2682FE00B529BF /* DDPoint+MKAnnotation.h */,
+				1D04480B1B2682FE00B529BF /* DDPoint+MKAnnotation.m */,
 			);
 			name = Model;
 			sourceTree = "<group>";
@@ -170,10 +183,20 @@
 		1D1686EA1B0804760017A78A /* ListViewController */ = {
 			isa = PBXGroup;
 			children = (
+				1D1686DF1B05E4A40017A78A /* CustomCell */,
 				1D1686E71B08046A0017A78A /* ListViewController.h */,
 				1D1686E81B08046A0017A78A /* ListViewController.m */,
 			);
 			name = ListViewController;
+			sourceTree = "<group>";
+		};
+		1DFC99841B225B7F0049DE08 /* CoreDataHelper */ = {
+			isa = PBXGroup;
+			children = (
+				1DFC99811B225B7B0049DE08 /* CoreDataHelper.h */,
+				1DFC99821B225B7B0049DE08 /* CoreDataHelper.m */,
+			);
+			name = CoreDataHelper;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -277,11 +300,16 @@
 			buildActionMask = 2147483647;
 			files = (
 				1D1686DC1B05B6ED0017A78A /* PointTableViewCell.m in Sources */,
+				1DFC99961B22630C0049DE08 /* DDPoint.m in Sources */,
 				1D1686E91B08046A0017A78A /* ListViewController.m in Sources */,
 				1D0DAE161B026D2F007E0A83 /* AppDelegate.m in Sources */,
+				1DFC99871B225BBA0049DE08 /* Model.xcdatamodeld in Sources */,
+				1D04480C1B2682FE00B529BF /* DDPoint+MKAnnotation.m in Sources */,
+				1D24707A1B28A580007B336A /* DDCalloutView.m in Sources */,
 				1D1686EC1B0826A40017A78A /* MapViewController.m in Sources */,
-				1D1686E51B07E68D0017A78A /* DDUModel.m in Sources */,
+				1D1686E51B07E68D0017A78A /* DDPointList.m in Sources */,
 				1D0DAE131B026D2F007E0A83 /* main.m in Sources */,
+				1DFC99831B225B7B0049DE08 /* CoreDataHelper.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -490,6 +518,19 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCVersionGroup section */
+		1DFC99851B225BBA0049DE08 /* Model.xcdatamodeld */ = {
+			isa = XCVersionGroup;
+			children = (
+				1DFC99861B225BBA0049DE08 /* Model.xcdatamodel */,
+			);
+			currentVersion = 1DFC99861B225BBA0049DE08 /* Model.xcdatamodel */;
+			path = Model.xcdatamodeld;
+			sourceTree = "<group>";
+			versionGroupType = wrapper.xcdatamodel;
+		};
+/* End XCVersionGroup section */
 	};
 	rootObject = 1D0DAE051B026D2F007E0A83 /* Project object */;
 }

@@ -7,9 +7,10 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "DDPoint.h"
 
 @interface PointTableViewCell : UITableViewCell
 
-- (void)setWithDict:(NSDictionary *)dict;
+- (void)setupWithPoint:(DDPoint *)point;
 
 @end

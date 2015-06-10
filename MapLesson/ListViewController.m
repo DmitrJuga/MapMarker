@@ -7,16 +7,17 @@
 //
 
 #import "AppConstants.h"
+#import "MapViewController.h"
 #import "ListViewController.h"
 #import "PointTableViewCell.h"
-#import "DDUModel.h"
+#import "DDPointList.h"
 
 
-@interface ListViewController ()
+@interface ListViewController () <UITableViewDataSource, UITableViewDelegate>
 
-@property (weak, nonatomic) IBOutlet UIView *customNavBar;
 @property (weak, nonatomic) IBOutlet UITableView *tableView;
-@property (nonatomic, strong) NSMutableArray *arrayPoints;
+@property (weak, nonatomic) IBOutlet UIView *customNavBar;
+@property (nonatomic, strong) DDPointList *pointList;
 
 @end
 
@@ -26,13 +27,15 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     
+    self.tableView.tableFooterView = [[UIView alloc]init];
+    // custom NavigationBar
     self.customNavBar.layer.borderWidth = 0.5;
     self.customNavBar.layer.borderColor = [UIColor lightGrayColor].CGColor;
-    
-    self.arrayPoints = [DDUModel sharedModel].arrayPoints;
-    self.tableView.tableFooterView = [[UIView alloc]init];
+    // модель
+    self.pointList = [DDPointList sharedPointList];
 }
 
+// обновление перед отображением
 -(void)viewWillAppear:(BOOL)animated {
     [super viewWillAppear:animated];
     [self.tableView reloadData];
@@ -43,13 +46,13 @@
 
 // кол-во строк в таблице
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
-    return self.arrayPoints.count;
+    return self.pointList.count;
 }
 
 // заполнение ячейки в таблице
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
     PointTableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:POINT_CELL_ID];
-    [cell setWithDict: self.arrayPoints[indexPath.row]];
+    [cell setupWithPoint:self.pointList.array[indexPath.row]];
     return cell;
 }
 
@@ -60,10 +63,9 @@
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
     // переключаемся на вью с картой
     self.tabBarController.selectedIndex = 0;
+    MapViewController *mapVC = self.tabBarController.viewControllers[0];
+    [mapVC selectAnnotation: self.pointList.array[indexPath.row]];
     [tableView deselectRowAtIndexPath:indexPath animated:NO];
-    // отправляем нотификацию для перехода на аннотацию
-    NSDictionary *pointDict = self.arrayPoints[indexPath.row];
-    [[NSNotificationCenter defaultCenter] postNotificationName:SELECT_NOTIF object:self userInfo:pointDict];
 }
 
 // разрешаем редактирование таблицы
@@ -74,17 +76,28 @@
 // удаление одной строки
 -(void)tableView:(UITableView *)tableView commitEditingStyle:(UITableViewCellEditingStyle)editingStyle forRowAtIndexPath:(NSIndexPath *)indexPath {
     if (editingStyle == UITableViewCellEditingStyleDelete) {
-        [self.arrayPoints removeObjectAtIndex:indexPath.row];
-        [self.tableView reloadData];
+        [self.pointList deletePointAtIndex:indexPath.row];
+        [self.tableView deleteRowsAtIndexPaths:@[ indexPath ] withRowAnimation:YES];
     }
 }
 
-#pragma mark - Buttons Actions
+#pragma mark - Button Actions
 
 // обработчик нажатия кнопки "Очистить"
 - (IBAction)btnClearPressed:(id)sender {
-    [self.arrayPoints removeAllObjects];
-    [self.tableView reloadSections:[NSIndexSet indexSetWithIndex:0] withRowAnimation:UITableViewRowAnimationFade];
+    if (self.pointList.count > 0) {
+        UIAlertController *alert = [UIAlertController alertControllerWithTitle:@"Удаление"
+                                                                       message:@"Все точки будут удалены безвозвратно!"
+                                                                preferredStyle:UIAlertControllerStyleActionSheet];
+        [alert addAction:[UIAlertAction actionWithTitle:@"Отмена" style:UIAlertActionStyleCancel handler:nil]];
+        [alert addAction:[UIAlertAction actionWithTitle:@"Удалить" style:UIAlertActionStyleDestructive handler:^(UIAlertAction *action) {
+            // удаляем
+            [self.pointList deleteAllPoints];
+            [self.tableView reloadSections:[NSIndexSet indexSetWithIndex:0]
+                          withRowAnimation:UITableViewRowAnimationFade];
+        }]];
+        [self presentViewController:alert animated:YES completion:nil];
+    }
 }
 
 

@@ -12,5 +12,7 @@
 
 @interface MapViewController : UIViewController <MKMapViewDelegate, CLLocationManagerDelegate>
 
+- (void)selectAnnotation:(id<MKAnnotation>)annotation;
+
 @end
 
