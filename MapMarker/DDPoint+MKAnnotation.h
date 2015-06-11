@@ -6,8 +6,8 @@
 //  Copyright (c) 2015 Dmitriy Dolotenko. All rights reserved.
 //
 
+#import <MapKit/MapKit.h>
 #import "DDPoint.h"
-#import "MapKit/MapKit.h"
 
 @interface DDPoint (MKAnnotation) <MKAnnotation>
 

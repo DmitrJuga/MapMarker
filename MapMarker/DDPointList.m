@@ -6,7 +6,6 @@
 //  Copyright (c) 2015 Dmitriy Dolotenko. All rights reserved.
 //
 
-#import "AppConstants.h"
 #import "DDPointList.h"
 
 @interface DDPointList()

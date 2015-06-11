@@ -7,7 +7,6 @@
 //
 
 #import <Foundation/Foundation.h>
-#import <CoreData/CoreData.h>
 #import "DDCoreDataHelper.h"
 
 @interface DDPoint : NSManagedObject
@@ -17,6 +16,5 @@
 @property (nonatomic) double latitude;
 @property (nonatomic) double longitude;
 
-//+ (NSString *)entityName;
 
 @end

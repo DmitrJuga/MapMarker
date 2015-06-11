@@ -12,9 +12,6 @@
 #import "DDPoint+MKAnnotation.h"
 #import "DDCalloutView.h"
 
-
-typedef NSDictionary * (^PointArrayElementBlock)(NSString *street, NSString *city, NSString *zipCode, CLLocationCoordinate2D coordinate);
-
 @interface MapViewController ()
 
 @property (weak, nonatomic) IBOutlet UIView *customNavBar;

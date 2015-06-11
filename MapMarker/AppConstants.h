@@ -23,6 +23,4 @@
 #define     CALLUOT_VIEW_WIDTH  200
 #define     CALLUOT_VIEW_HEIGHT  52
 
-// Нотификации
-#define     SELECT_NOTIF        @"SelectAnnotationNotification"
 

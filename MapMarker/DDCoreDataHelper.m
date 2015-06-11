@@ -16,9 +16,6 @@
 
 @end
 
-//@protocol DDModelManagedObject;
-
-
 @implementation DDCoreDataHelper
 
 // инициализация стека CoreData
