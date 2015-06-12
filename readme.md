@@ -35,6 +35,7 @@
 - `MKMapView` with customized `MKAnnotationView` and custom callout view (`DDCalloutView` class);
 - Animated callout appearance and disappearance on annotation selecting and deselecting;
 - Automatic map scale to show all annotations or to show selected annotation only;
+- `UILongPressGestureRecognizer`;
 - Auto Layout (Storyboard constraints).
 
 **Extra:**
