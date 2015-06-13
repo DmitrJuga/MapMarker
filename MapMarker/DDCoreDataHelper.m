@@ -111,27 +111,17 @@
 
 @end
 
-@protocol DDModelManagedObject <NSObject>
-
-// возвращает имя сущности текущего объекта
-+ (NSString *)entityName;
-
-// создаёт, добавляет и возвращает новый пустой объект
-+ (instancetype)newCoreDataObject;
-
-@end
-
 
 #pragma mark - NSManagedObject category
 
 // Расширение для NSManagedObject (поддержка работы с CoreDataHelper и моделью данных)
-@implementation NSManagedObject(CoreDataHelper)
+@implementation NSManagedObject(DDCoreDataHelper)
 
 // имя сущности
 + (NSString *)entityName { return @""; }
 
 // создаёт, добавляет и возвращает новый пустой объект
-+ (instancetype)newCoreDataObject {
++ (instancetype)createObject {
     return (NSManagedObject *)[[DDCoreDataHelper sharedInstance] addObjectForEntity:[self entityName]];
 }
 

@@ -204,7 +204,7 @@
             }]];
             [alert addAction:[UIAlertAction actionWithTitle:@"Добавить" style:UIAlertActionStyleDestructive handler:^(UIAlertAction *action) {
                 // создаём аннотацию
-                DDPoint *annotation = [DDPoint newCoreDataObject];
+                DDPoint *annotation = [DDPoint createObject];
                 UITextField *textField = alert.textFields.firstObject;
                 annotation.name = ([textField.text isEqualToString:@""]) ? @"Безымянная точка" : textField.text;
                 annotation.address = address;

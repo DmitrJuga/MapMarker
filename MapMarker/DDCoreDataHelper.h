@@ -27,9 +27,9 @@
 
 
 // Расширение для NSManagedObject (поддержка работы с CoreDataHelper и моделью данных)
-@interface NSManagedObject(CoreDataHelper)
+@interface NSManagedObject(DDCoreDataHelper)
 
 + (NSString *)entityName;
-+ (instancetype)newCoreDataObject;
++ (instancetype)createObject;
 
 @end
