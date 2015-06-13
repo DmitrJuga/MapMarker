@@ -23,14 +23,14 @@
 
 **Data Model:**
 - CoreData framework for persistent storage of app data objects (*map markers*);
-- My own `DDCoreDataHelper` class which encapsulats CoreData routines, provides shared (singleton) instance, extends `NSManagedObject` calss with custom category;
+- My own `DDCoreDataHelper` class which encapsulats CoreData routines, provides shared instance (singleton), extends `NSManagedObject` calss with custom category;
 - CoreData model contain 1 entity (`Point`) with 4 attributes;
 - `DDPoint` class represents CoreData entity in app data model;
 - Extension of `DDPoint` class (category) adopting `MKAnnotation` protocol to be used as *annotation* on the MapView.
-- `DDPointList` class which manages collection (array) of stored objects, implements data model-level-methods, provides shared (singleton) instance.
+- `DDPointList` class which manages collection (array) of stored objects, implements data model-level-methods, provides shared instance (singleton).
 
 **App UI:**
-- Uses 2 `UIViewController`s + `UITabBarController` + `UINavigationController` (with custom bar);
+- Uses 2 `UIViewController`s + `UITabBarController` + `UINavigationController` *(with custom bar)*;
 - `UITableView` with custom cells and row-deleting;
 - `MKMapView` with customized `MKAnnotationView` and custom callout view (`DDCalloutView` class);
 - Animated callout appearance and disappearance on annotation selecting and deselecting;
