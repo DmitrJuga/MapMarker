@@ -19,29 +19,29 @@
 - *При первом запуске запрашивается разрешение приложению получать доступ к информации о текущем положении.*
 - *При запуске в симуляторе необходимо включить симуляцию местоположения.*
 
-## Technical Information
+## Technical Details
 
 **Data Model:**
-- CoreData framework for persistent storage of app data objects (*map markers*);
-- My own `DDCoreDataHelper` class which encapsulats CoreData routines, provides shared instance (singleton), extends `NSManagedObject` calss with custom category;
-- CoreData model contain 1 entity (`Point`) with 4 attributes;
-- `DDPoint` class represents CoreData entity in app data model;
+- CoreData framework for persistent storage of app data objects (*map markers*).
+- My own `DDCoreDataHelper` class which encapsulats CoreData routines, provides shared instance (singleton), extends `NSManagedObject` calss with custom category.
+- CoreData model contain 1 entity (`Point`) with 4 attributes.
+- `DDPoint` class represents CoreData entity in app data model.
 - Extension of `DDPoint` class (category) adopting `MKAnnotation` protocol to be used as *annotation* on the MapView.
 - `DDPointList` class which manages collection (array) of stored objects, implements data model-level-methods, provides shared instance (singleton).
 
 **App UI:**
-- Uses 2 `UIViewController`s + `UITabBarController` + `UINavigationController` *(with custom bar)*;
-- `UITableView` with custom cells and row-deleting;
-- `MKMapView` with customized `MKAnnotationView` and custom callout view (`DDCalloutView` class);
-- Animated callout appearance and disappearance on annotation selecting and deselecting;
-- Automatic map scale to show all annotations or to show selected annotation only;
-- `UILongPressGestureRecognizer`;
+- Uses 2 `UIViewController`s + `UITabBarController` + `UINavigationController` *(with custom bar)*.
+- `UITableView` with custom cells and row-deleting.
+- `MKMapView` with customized `MKAnnotationView` and custom callout view (`DDCalloutView` class).
+- Animated callout appearance and disappearance on annotation selecting and deselecting.
+- Automatic map scale to show all annotations or to show selected annotation only.
+- `UILongPressGestureRecognizer`.
 - Auto Layout (Storyboard constraints).
 
 **Extra:**
-- CoreLocation framework (`CLLocationManager` with delegate) to display and update current user location on map;
-- CoreLocation *WhenInUseAuthorization* permission request;
-- AppIcon (image from free web source).
+- CoreLocation framework (`CLLocationManager` with delegate) to display and update current user location on map.
+- CoreLocation *WhenInUseAuthorization* permission request.
+- App Icon (image from free web source).
 
 
 ## More Screenshots
@@ -53,7 +53,7 @@
 
 ## Основа проекта
 
-Проект создан на основе моей домашней работы к урокам 3 и 4 по курсу **"Objective C. Уровень 2"** в [НОЧУ ДО «Школа программирования» (http://geekbrains.ru)](http://geekbrains.ru/) и доработан после окончания курса. Домашнее задание и пояснения к выполненой работе - см. в [homework_readme.md](https://github.com/DmitrJuga/MapMarker/blob/master/homework_readme.md).
+Проект создан на основе моей домашней работы к урокам 3 и 4 по курсу **"Objective C. Уровень 2"** в НОЧУ ДО «Школа программирования» ([http://geekbrains.ru](http://geekbrains.ru/users/38648)) и доработан после окончания курса. Домашнее задание и пояснения к выполненой работе - см. в [homework_readme.md](https://github.com/DmitrJuga/MapMarker/blob/master/homework_readme.md).
 
 ---
 
