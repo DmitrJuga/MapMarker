@@ -19,6 +19,8 @@
 @property (weak, nonatomic) IBOutlet MKMapView *mapView;
 @property (weak, nonatomic) DDPointList *pointList;
 
+@property (assign, nonatomic) BOOL isNeedToTrackLocation;
+
 @end
 
 
@@ -74,8 +76,6 @@
 
 // выбор аннотации
 - (void)selectAnnotation:(id<MKAnnotation>)annotation {
-    MKCoordinateRegion region = MKCoordinateRegionMakeWithDistance(annotation.coordinate, DEF_MAP_SCALE, DEF_MAP_SCALE);
-    [self.mapView setRegion:region animated:YES];
     [self.mapView selectAnnotation:annotation animated:YES];
 }
 
@@ -108,21 +108,16 @@
 
 // обработка нажатия на маркер (выбор аннотации)
 - (void)mapView:(MKMapView *)mapView didSelectAnnotationView:(MKAnnotationView *)view {
-    if (![view.annotation isKindOfClass:MKUserLocation.class]) {
-        // фокус на аннотацию (если не по центру - ставим по центру)
-        id<MKAnnotation>annotation = view.annotation;
-        if (annotation.coordinate.latitude != mapView.region.center.latitude ||
-            annotation.coordinate.longitude != mapView.region.center.longitude) {
-            MKCoordinateRegion region = MKCoordinateRegionMake(annotation.coordinate, mapView.region.span);
-            [mapView setRegion:region animated:YES];
-        }
-        // анимировнное появление calloutView
-        UIView *calloutView = view.subviews.firstObject;
-        [UIView animateWithDuration:0.4 animations:^{
-            calloutView.alpha = .85;
-            calloutView.transform = CGAffineTransformIdentity;
-        }];
-    }
+    // фокус на аннотацию (если не по центру - ставим по центру)
+    id<MKAnnotation>annotation = view.annotation;
+    MKCoordinateRegion region = MKCoordinateRegionMakeWithDistance(annotation.coordinate, DEF_MAP_SCALE, DEF_MAP_SCALE);
+    [self.mapView setRegion:region animated:YES];
+    // анимировнное появление calloutView
+    UIView *calloutView = view.subviews.firstObject;
+    [UIView animateWithDuration:0.4 animations:^{
+        calloutView.alpha = .85;
+        calloutView.transform = CGAffineTransformIdentity;
+    }];
 }
 
 // обработка отмены нажатия на маркер аннотации
@@ -142,6 +137,7 @@
 - (void)locationManager:(CLLocationManager *)manager didChangeAuthorizationStatus:(CLAuthorizationStatus)status {
     if (status == kCLAuthorizationStatusAuthorizedWhenInUse) {
         self.mapView.showsUserLocation = YES;
+        self.isNeedToTrackLocation = YES;
         [self.locationManager startUpdatingLocation];
     }
 }
@@ -150,8 +146,10 @@
 - (void)locationManager:(CLLocationManager *)manager didUpdateLocations:(NSArray *)locations {
     // фокус на текущцю локацию
     CLLocation *location = locations.lastObject;
-    [self.mapView setRegion:MKCoordinateRegionMakeWithDistance(location.coordinate, DEF_MAP_SCALE, DEF_MAP_SCALE) animated:YES];
-    [self.locationManager stopUpdatingLocation];
+    if (self.isNeedToTrackLocation) {
+        [self.mapView setRegion:MKCoordinateRegionMakeWithDistance(location.coordinate, DEF_MAP_SCALE, DEF_MAP_SCALE) animated:YES];
+        self.isNeedToTrackLocation = NO;
+    }
 }
 
 
@@ -222,10 +220,16 @@
 
 #pragma mark - Button Actions
 
-// обработчик нажатия кнопки "Текущее положение"
+// обработчик нажатия кнопки "Показать текущее положение"
 - (IBAction)btnClearPressed:(id)sender {
-    if (CLLocationManager.authorizationStatus == kCLAuthorizationStatusAuthorizedWhenInUse) {
-        [self.locationManager startUpdatingLocation];
+    if (CLLocationManager.authorizationStatus != kCLAuthorizationStatusAuthorizedWhenInUse) {
+        return;
+    }
+    for (id<MKAnnotation>annotation in self.mapView.annotations) {
+        if ([annotation isKindOfClass:MKUserLocation.class]) {
+            MKCoordinateRegion region = MKCoordinateRegionMakeWithDistance(annotation.coordinate, DEF_MAP_SCALE, DEF_MAP_SCALE);
+            [self.mapView setRegion:region animated:YES];
+        }
     }
 }
 
