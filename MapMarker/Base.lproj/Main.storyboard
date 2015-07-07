@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="7706" systemVersion="14D131" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="fFK-GP-tNK">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="7706" systemVersion="14E46" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="fFK-GP-tNK">
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="7703"/>
         <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
@@ -76,15 +76,32 @@
                                     <constraint firstAttribute="bottom" secondItem="dk4-rd-rZz" secondAttribute="bottom" constant="8" id="rpU-g7-ZrR"/>
                                 </constraints>
                             </view>
+                            <view hidden="YES" alpha="0.64999999999999969" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="PwN-My-sTU" userLabel="Indicator">
+                                <rect key="frame" x="120" y="244" width="80" height="80"/>
+                                <subviews>
+                                    <activityIndicatorView opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" animating="YES" style="whiteLarge" translatesAutoresizingMaskIntoConstraints="NO" id="g7m-n9-DzG">
+                                        <rect key="frame" x="22" y="21" width="37" height="37"/>
+                                    </activityIndicatorView>
+                                </subviews>
+                                <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="centerY" secondItem="g7m-n9-DzG" secondAttribute="centerY" id="2du-vV-Xqu"/>
+                                    <constraint firstAttribute="centerX" secondItem="g7m-n9-DzG" secondAttribute="centerX" id="fU5-oB-LcX"/>
+                                    <constraint firstAttribute="width" constant="80" id="h9W-Ed-dVM"/>
+                                    <constraint firstAttribute="height" constant="80" id="ygD-u1-p1r"/>
+                                </constraints>
+                            </view>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                         <constraints>
                             <constraint firstAttribute="bottom" secondItem="drs-Fe-6hb" secondAttribute="bottom" id="899-2K-Y3F"/>
+                            <constraint firstAttribute="centerY" secondItem="PwN-My-sTU" secondAttribute="centerY" id="AGy-rc-G3U"/>
                             <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="drs-Fe-6hb" secondAttribute="bottom" id="B10-ej-ua0"/>
                             <constraint firstAttribute="trailing" secondItem="drs-Fe-6hb" secondAttribute="trailing" id="HWP-4r-xxA"/>
                             <constraint firstAttribute="trailingMargin" secondItem="aD6-2M-PEw" secondAttribute="trailing" constant="-17" id="NRe-VX-Xgx"/>
                             <constraint firstItem="drs-Fe-6hb" firstAttribute="top" secondItem="aD6-2M-PEw" secondAttribute="bottom" id="Si5-2Y-ttS"/>
                             <constraint firstItem="aD6-2M-PEw" firstAttribute="top" secondItem="8bC-Xf-vdC" secondAttribute="topMargin" id="U5I-Yc-WdL"/>
+                            <constraint firstAttribute="centerX" secondItem="PwN-My-sTU" secondAttribute="centerX" id="aoc-dT-Jx5"/>
                             <constraint firstItem="aD6-2M-PEw" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" constant="-17" id="ewB-kj-czo"/>
                             <constraint firstItem="drs-Fe-6hb" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" id="rZD-hE-55Y"/>
                         </constraints>
@@ -98,6 +115,7 @@
                     <navigationItem key="navigationItem" id="RLU-c9-o80"/>
                     <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina4"/>
                     <connections>
+                        <outlet property="activityIndicator" destination="PwN-My-sTU" id="7Tw-pC-AyH"/>
                         <outlet property="customNavBar" destination="aD6-2M-PEw" id="pwC-8J-jbQ"/>
                         <outlet property="mapView" destination="drs-Fe-6hb" id="elM-5h-y8a"/>
                     </connections>

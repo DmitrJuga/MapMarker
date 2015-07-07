@@ -17,6 +17,7 @@
 @property (weak, nonatomic) IBOutlet UIView *customNavBar;
 @property (strong, nonatomic) CLLocationManager *locationManager;
 @property (weak, nonatomic) IBOutlet MKMapView *mapView;
+@property (weak, nonatomic) IBOutlet UIView *activityIndicator;
 @property (weak, nonatomic) DDPointList *pointList;
 
 @property (assign, nonatomic) BOOL isNeedToTrackLocation;
@@ -29,6 +30,7 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
 
+    self.activityIndicator.layer.cornerRadius = 8;
     // custom NavigationBar
     self.customNavBar.layer.borderWidth = 0.5;
     self.customNavBar.layer.borderColor = [UIColor lightGrayColor].CGColor;
@@ -169,6 +171,7 @@
         MKPointAnnotation *tmpAnnotation = [[MKPointAnnotation alloc] init];
         tmpAnnotation.coordinate = touchCoordinate;
         [self.mapView addAnnotation:tmpAnnotation];
+        self.activityIndicator.hidden = NO;
         
         // запрашиваем и обрабатываем геоинформацию (нужен адрес точки)
         CLGeocoder *geocoder = [[CLGeocoder alloc]init];
@@ -211,6 +214,7 @@
                 [self.mapView removeAnnotation:tmpAnnotation];
                 [self.mapView addAnnotation:annotation];
             }]];
+            self.activityIndicator.hidden = YES;
             [self presentViewController:alert animated:YES completion:nil];
         }];
 
